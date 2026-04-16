@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubSónica - Perfil Banda</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="estructura">
+        <header>
+            <h1>SubSónica</h1>
+            <a href="login.html">Iniciar Sesion</a>
+        </header>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="bandas.html">Bandas/artistas</a>
+            <a href="canciones.html">Canciones</a>
+            <a href="registrarBanda.html">Registra una banda o artista</a>
+            <a href="registrarCancion.html">Registra una canción</a>
+            <a href="buscar.html">Buscar</a>
+        </nav>
+
+        <main class="perfil-dinamico">
+            <section class="hero-banda">
+                <div class="hero-overlay"></div>
+                <img id="banda-imagen-grande" src="img/demo.jpg" alt="Banda demo" class="hero-img">
+                
+                <div class="hero-content">
+                    <span id="banda-genero" class="tag-genero">Rock Alternativo</span>
+                    <h1 id="banda-nombre">Banda Demo</h1>
+                    <div class="hero-meta">
+                        <span id="banda-origen">Lima, Perú</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="perfil-detalles">
+                <div class="col-bio">
+                    <h3>Crónica / Bio</h3>
+                    <p id="banda-bio">
+                        Esta es una banda de ejemplo para mostrar el funcionamiento en modo estático.
+                    </p>
+                </div>
+
+                <div class="col-tracks">
+                    <h3>Radar de Tracks</h3>
+                    <ul id="banda-discos" class="lista-tracks-perfil">
+                        <li>Track 1 - Demo</li>
+                        <li>Track 2 - Demo</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>Matias Chamana-2025</footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
