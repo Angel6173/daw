@@ -21,7 +21,7 @@ El objetivo es automatizar completamente el despliegue del servidor mediante un 
 ### 3.1 Clonar el repositorio
 
 ```
-git clone https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+git clone https://github.com/Angel6173/daw.git
 cd lab-docker
 ```
 
