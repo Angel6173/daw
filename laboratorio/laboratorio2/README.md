@@ -4,7 +4,7 @@ Este proyecto contiene tres aplicaciones desplegadas usando contenedores con Doc
 
 * Calculadora
 * Ahorcado
-* Registradora
+* Teclado
 
 Cada aplicación se encuentra en su propia carpeta y se ejecuta utilizando Docker y Docker Compose.
 
@@ -17,29 +17,6 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado:
 * Docker (incluye Docker Compose)
   https://www.docker.com/products/docker-desktop
 
----
-
-## Estructura del proyecto
-
-```
-proyecto/
-│
-├── ejercicio01/   # Calculadora
-│   ├── Dockerfile
-│   └── index.html
-│
-├── ejercicio02/   # Ahorcado
-│   ├── Dockerfile
-│   └── index.html
-│
-├── ejercicio03/   # Registradora
-│   ├── Dockerfile
-│   └── index.html
-│
-└── docker_compose.yml
-```
-
----
 
 ## Cómo ejecutar el proyecto
 
