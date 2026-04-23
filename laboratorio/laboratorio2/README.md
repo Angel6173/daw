@@ -68,7 +68,3 @@ docker compose -f docker_compose.yml down
 * Docker Desktop debe estar en ejecución
 
 ---
-
-## Autor
-
-Proyecto desarrollado como parte de un laboratorio académico utilizando Docker.
