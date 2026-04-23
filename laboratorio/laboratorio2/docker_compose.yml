@@ -1,0 +1,15 @@
+version: "3"
+services:
+  calculadora:
+    build: ./ejercicio02
+    ports:
+      - "8080:80"
+
+  ahorcado:
+    build: ./ejercicio03
+    ports:
+      - "8081:80"
+  teclado:
+    build: ./ejercicio01
+    ports:
+      - "8082:80"
