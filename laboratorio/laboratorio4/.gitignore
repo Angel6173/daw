@@ -1,0 +1,10 @@
+daw/
+venv_pygame
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.vscode/
+.idea/
+*.swp
