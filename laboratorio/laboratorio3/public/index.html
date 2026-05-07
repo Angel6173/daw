@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda Lab 03 - Vistas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="card form-side">
+        <h2 id="title">Nuevo Evento</h2>
+        <form id="form-agenda">
+            <input type="hidden" name="oldFecha" id="oldFecha">
+            <input type="hidden" name="oldHora" id="oldHora">
+
+            <label>Fecha</label>
+            <input type="date" name="fecha" id="fecha" required>
+
+            <label>Hora</label>
+            <input type="time" name="hora" id="hora" required>
+
+            <label>Descripción</label>
+            <textarea name="descripcion" id="descripcion" rows="5" required></textarea>
+
+            <button type="button" class="btn-save" id="btn-submit" onclick="enviarFormulario()">Guardar Evento</button>
+            <button type="button" class="btn-cancel" id="btn-cancel" onclick="resetForm()">Cancelar</button>
+        </form>
+        <br><br>
+        <div class="view-selector">
+            <button id="btn-vista-lista" class="view-btn active" onclick="cambiarVista('lista')">Vista Lista</button>
+            <button id="btn-vista-estructura" class="view-btn" onclick="cambiarVista('estructura')">Vista Estructura</button>
+        </div>
+    </div>
+
+    <div class="card list-side">
+
+        <div id="vista-lista" class="view-content">
+            <h2>Eventos Programados</h2>
+            <div id="lista-eventos"></div>
+        </div>
+
+        <div id="vista-estructura" class="view-content" style="display: none;">
+            <h2>Estructura / Calendario</h2>
+            <div id="calendario-contenedor"></div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                Total Eventos: <br>
+                <b id="count-ev" style="color: #007bff; font-size: 1.2rem;">0</b>
+            </div>
+            <div class="stat-box">
+                Días Ocupados: <br>
+                <b id="count-days" style="color: #28a745; font-size: 1.2rem;">0</b>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="agenda.min.js"></script>
+</body>
+</html>

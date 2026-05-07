@@ -1,0 +1,168 @@
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    gap: 30px;
+    width: 1000px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.form-side { flex: 1; }
+.list-side { flex: 1.5; }
+
+h2, h3 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
+
+label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; }
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.view-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.view-btn {
+    background: #e9ecef;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-btn:hover { background: #d4d6d8; }
+.view-btn.active { background: #007bff; color: white; }
+
+.dia-item {
+    background: #fdfdfd;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.dia-header {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.dia-cuerpo { padding: 10px 15px; }
+
+.evento-item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-left: 4px solid #007bff;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.btn-save { background: #28a745; color: white; width: 100%; padding: 12px; }
+.btn-save:hover { background: #218838; }
+.btn-cancel { background: #6c757d; color: white; width: 100%; margin-top: 5px; display: none; padding: 10px; }
+.btn-edit { background: #ffc107; color: #212529; }
+.btn-edit:hover { background: #e0a800; }
+.btn-delete { background: #dc3545; color: white; }
+.btn-delete:hover { background: #c82333; }
+
+/* Calendario */
+.nav-calendario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nav-calendario button {
+    background: #007bff;
+    color: white;
+    padding: 6px 12px;
+}
+
+.calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.cal-dia {
+    border: 1px solid #ccd1d9;
+    border-radius: 6px;
+    min-height: 65px;
+    padding: 4px;
+    background: #fdfdfd;
+    text-align: center;
+}
+
+.cal-dia.ocupado {
+    background: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.cal-dia .num {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.cal-dia .dots {
+    font-size: 0.70rem;
+    color: #155724;
+    background: #c3e6cb;
+    padding: 1px 3px;
+    border-radius: 4px;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-box {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+}
