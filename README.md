@@ -1,10 +1,5 @@
 # Laboratorio 05: Base de Datos - Sistema de Matrículas
 
-## Entregables
-| Entregables | URL |
-| :--- | :--- |
-| Repositorio | https://github.com/rescobedoq/enrollments.git |
-| Informe PDF | https://github.com/rescobedoq/enrollments/blob/main/informes/DAW_lab05_bd.pdf |
 
 ## 1. Descripción de la Práctica
 Este laboratorio consiste en el diseño lógico, la implementación física y el despliegue en la nube de una base de datos relacional orientada al control de matrículas académicas (`enrollments`). Se han seguido estrictamente todos los estándares internacionales de diseño y las recomendaciones específicas brindadas por la cátedra.
