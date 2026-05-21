@@ -1,14 +1,5 @@
 # Laboratorio 05: Base de Datos - Sistema de Matrículas
 
-## Autores (Autocalificación)
-| Autores | Rol | Porcentaje |
-| :--- | :--- | :---: |
-| Richart Escobedo | Elaboración del modelo lógico DER | 100% |
-| Richart Escobedo | Implementación del modelo físico PostgreSQL | 100% |
-| Richart Escobedo | Implementación en Supabase | 100% |
-| Richart Escobedo | Elaboración del informe | 100% |
-| | **Total** | **100%** |
-
 ## Entregables
 | Entregables | URL |
 | :--- | :--- |
@@ -22,7 +13,7 @@ Este laboratorio consiste en el diseño lógico, la implementación física y el
 El modelo cuenta con las entidades principales para gestionar alumnos, cursos, cuentas de usuarios y la relación correspondiente de inscripciones.
 
 *(Inserta aquí la imagen de tu diagrama)*
-![Modelo Lógico DER](imagenes/der.png)
+![Modelo Lógico DER](imagenes/supabase_der.png)
 
 ## 3. Estándares de Diseño Aplicados
 - **Idioma:** Nomenclatura 100% en inglés.
