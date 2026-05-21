@@ -12,7 +12,6 @@ Este laboratorio consiste en el diseño lógico, la implementación física y el
 ## 2. Modelo Lógico (DER)
 El modelo cuenta con las entidades principales para gestionar alumnos, cursos, cuentas de usuarios y la relación correspondiente de inscripciones.
 
-*(Inserta aquí la imagen de tu diagrama)*
 ![Modelo Lógico DER](imagenes/supabase_der.png)
 
 ## 3. Estándares de Diseño Aplicados
