@@ -30,3 +30,13 @@ La base de datos se encuentra desplegada exitosamente en Supabase (PostgreSQL en
 ## Referencias
 - https://supabase.com/
 - https://www.postgresql.org/docs/current/index.html
+
+## Link video
+-https://www.youtube.com/watch?v=9gBWyI85meU
+
+
+
+
+
+
+
