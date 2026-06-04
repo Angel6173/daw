@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p><strong>Apellido Paterno:</strong> {{ student.fathersurname }}</p>
+    <p><strong>Apellido Materno:</strong> {{ student.mothersurname }}</p>
+    <p><strong>Nombres:</strong> {{ student.names }}</p>
+    <p><strong>Género:</strong> {{ student.gender }}</p>
+    <p><strong>Dirección:</strong> {{ student.address }}</p>
+    <p><strong>Teléfono:</strong> {{ student.phone }}</p>
+    <p><a href="{% url 'student_list' %}">Volver al listado</a></p>
+</body>
+</html>
