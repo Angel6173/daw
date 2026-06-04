@@ -33,8 +33,8 @@ Antes de ejecutar el proyecto, asegúrese de tener instalado:
 ## 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-cd TU_REPOSITORIO
+git clone https://github.com/SantyGutRamos/Laboratorio7_daw.git
+cd Laboratorio7
 ```
 
 ## 2. Crear y activar un entorno virtual
