@@ -1,213 +1,202 @@
-# Laboratorio 06 - Django Admin | Sistema de Matrículas
+# Laboratorio 7-Sistema Académico de Matrículas
 
-Proyecto desarrollado para el curso de Desarrollo de Aplicaciones Web (DAW) utilizando Django, PostgreSQL y el panel administrativo de Django Admin.
+## Descripción
 
-El objetivo principal de esta práctica es implementar:
+Este proyecto consiste en una aplicación web desarrollada con Django para la gestión académica de estudiantes, cursos y matrículas. La aplicación utiliza PostgreSQL como sistema gestor de base de datos, alojado en Supabase, y sigue la arquitectura MVT (Model-View-Template) propuesta por el framework Django.
 
-- Persistencia de datos
-- Administración mediante Django Admin
-- Validaciones y restricciones
-- Auditoría de registros
-- Relaciones entre entidades
-- Buenas prácticas de modelado y nomenclatura
+Entre las funcionalidades implementadas se incluyen:
 
----
-
-# Tecnologías Utilizadas
-
-- Python
-- Django
-- PostgreSQL
-- Django Admin
-- Git & GitHub
-- Virtual Environment (venv)
+- Gestión de estudiantes.
+- Gestión de cursos.
+- Relación de matrículas entre estudiantes y cursos.
+- Validaciones personalizadas mediante Validators.
+- Administración de datos mediante Django Admin.
+- Uso de Class-Based Views (CBV).
+- Conexión a una base de datos PostgreSQL remota mediante Supabase.
+- Manejo seguro de credenciales utilizando variables de entorno.
 
 ---
 
-# Configuración del Proyecto
+# Requisitos Previos
+
+Antes de ejecutar el proyecto, asegúrese de tener instalado:
+
+- Python 3.x
+- Git
+- PostgreSQL (opcional si utiliza Supabase)
+- Acceso a una instancia de Supabase
+
+---
+
+# Instalación
 
 ## 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/SantyGutRamos/Daw_laboratorio6.git
-cd Daw_laboratorio6
+git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+cd TU_REPOSITORIO
 ```
 
----
-
-## 2. Crear y activar el entorno virtual
-
-### Linux / macOS
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+## 2. Crear y activar un entorno virtual
 
 ### Windows
 
 ```bash
-python -m venv venv
-venv\Scripts\activate
+python -m venv my_venv
+source my_venv/Scripts/activate
 ```
 
----
+### Linux / macOS
 
-## 3. Instalar dependencias
+```bash
+python3 -m venv my_venv
+source my_venv/bin/activate
+```
+
+## 3. Instalar las dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## 4. Ejecutar migraciones
+Si el archivo `requirements.txt` no existe, puede generarse mediante:
 
 ```bash
-python manage.py migrate
+pip freeze > requirements.txt
 ```
 
 ---
 
-## 5. Crear superusuario
+# Configuración de Variables de Entorno
+
+## 1. Instalar python-dotenv
 
 ```bash
-python manage.py createsuperuser
+pip install python-dotenv
+```
+
+## 2. Crear el archivo `.env`
+
+En la raíz del proyecto (al mismo nivel que `manage.py`), crear un archivo denominado `.env` con el siguiente contenido:
+
+```env
+DB_NAME=postgres
+DB_USER=postgres
+DB_PASSWORD=TU_PASSWORD_SUPABASE
+DB_HOST=TU_HOST.supabase.co
+DB_PORT=5432
+
+SECRET_KEY=TU_SECRET_KEY_DJANGO
+DEBUG=True
+```
+
+## 3. Configurar `settings.py`
+
+Asegúrese de que el archivo `settings.py` cargue las variables de entorno:
+
+```python
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+    }
+}
+```
+
+## 4. Configurar `.gitignore`
+
+Agregar la siguiente línea al archivo `.gitignore` para evitar exponer credenciales sensibles:
+
+```gitignore
+.env
 ```
 
 ---
 
-## 6. Ejecutar el servidor
+# Verificación y Ejecución
+
+## Verificar la configuración del proyecto
+
+```bash
+python manage.py check
+```
+
+## Ejecutar el servidor de desarrollo
 
 ```bash
 python manage.py runserver
 ```
 
----
-
-# Modelo Entidad - Relación (DER)
-
-El sistema se encuentra compuesto por las siguientes entidades principales:
-
-- Users
-- Students
-- Courses
-- StudentsCourses
-
-La tabla `StudentsCourses` resuelve la relación muchos a muchos entre estudiantes y cursos.
+La aplicación estará disponible en:
 
 ```text
-[Users] 1 ------- 0..* [Students]
-
-[Users] 1 ------- 0..* [Courses]
-
-[Students] 1 ---- 0..* [StudentsCourses] * ---- 1 [Courses]
+http://127.0.0.1:8000/
 ```
 
 ---
 
-# Arquitectura del Proyecto
+# Rutas Disponibles
 
-Los modelos fueron desarrollados en archivos independientes para mantener una arquitectura modular y escalable.
-
-## Características Implementadas
-
-- Campos obligatorios de auditoría
-- Validadores personalizados
-- Sobreescritura del método `save()`
-- Uso de relaciones `ForeignKey`
-- Integración con Django Admin
-- Gestión automática de fechas de creación y modificación
-
----
-
-# Campos de Auditoría
-
-Todas las tablas principales implementan los siguientes campos:
+## Panel de Administración
 
 ```text
-status
-created
-modified
-created_id
-modified_id
+http://127.0.0.1:8000/admin/
 ```
 
-Estos campos permiten:
+## Usuarios
 
-- Control de estado lógico
-- Trazabilidad de registros
-- Auditoría de operaciones
-- Seguimiento de modificaciones
+```text
+http://127.0.0.1:8000/proyecto/users/
+```
 
----
+## Estudiantes
 
-# Django Admin
+```text
+http://127.0.0.1:8000/proyecto/students/
+```
 
-Se configuró el panel administrativo de Django para permitir operaciones CRUD automáticas sobre las entidades del sistema.
+## Cursos
 
----
+```text
+http://127.0.0.1:8000/proyecto/courses/
+```
 
-# Funcionalidades Implementadas
+## Matrículas (Cursos - Estudiantes)
 
-## Registro de Estudiantes
-
-- Creación de estudiantes desde Django Admin
-- Conversión automática de nombres a mayúsculas
-- Validaciones de teléfono
-- Gestión de estados
-
----
-
-## Registro de Cursos
-
-- Gestión de cursos
-- Validación de créditos
-- Control de estados
-- Administración desde el panel de Django
+```text
+http://127.0.0.1:8000/proyecto/courses-students/
+```
 
 ---
 
-## Matrícula de Estudiantes
+# Tecnologías Utilizadas
 
-- Relación entre estudiantes y cursos
-- Gestión mediante tabla intermedia `StudentsCourses`
-- Selección desde listas desplegables
-- Persistencia automática de relaciones
-
----
-
-# Capturas del Sistema
-
-## Crear Estudiante
-
-> Insertar captura aquí
+- Python 3
+- Django
+- PostgreSQL
+- Supabase
+- Python-Dotenv
+- HTML
+- CSS
 
 ---
 
-## Crear Curso
+# Consideraciones de Seguridad
 
-> Insertar captura aquí
-
----
-
-## Matrícula de Estudiante
-
-> Insertar captura aquí
+- Las credenciales de acceso a la base de datos no deben almacenarse directamente en el código fuente.
+- El archivo `.env` debe mantenerse fuera del repositorio.
+- Se recomienda utilizar variables de entorno para toda información sensible del proyecto.
 
 ---
-
-
-
----
-
-# Conclusiones
-
-- Django Admin permite acelerar significativamente el desarrollo de aplicaciones CRUD.
-- Las validaciones implementadas en los modelos garantizan la integridad de los datos.
-- Los campos de auditoría facilitan el seguimiento y control de cambios.
-- PostgreSQL ofrece una integración robusta y eficiente con Django.
-- La modularización mejora la mantenibilidad y escalabilidad del proyecto.
-
-# URL del video
--
