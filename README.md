@@ -34,7 +34,7 @@ Antes de ejecutar el proyecto, asegúrese de tener instalado:
 
 ```bash
 git clone https://github.com/SantyGutRamos/Laboratorio7_daw.git
-cd Laboratorio7
+cd Laboratorio7_daw
 ```
 
 ## 2. Crear y activar un entorno virtual
@@ -70,8 +70,11 @@ pip freeze > requirements.txt
 # Configuración de Variables de Entorno
 
 ## 1. Instalar python-dotenv
-
 ```bash
+cd lab07/exercises/MyDjangoProject
+```
+```bash
+
 pip install python-dotenv
 ```
 
