@@ -37,9 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'drf_spectacular', 
     'sismat'
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,6 +58,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'enrollments.urls'
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'API Lab08 - DAW',
+    'DESCRIPTION': 'API REST para gestión de cursos, docentes y estudiantes',
+    'VERSION': '1.0.0',
+}
 
 TEMPLATES = [
     {
