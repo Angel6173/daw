@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <ul>
+        {% for student in students %}
+            <li>
+                <a href="{% url 'student_detail' student.id %}">
+                    {{ student.fathersurname }} {{ student.mothersurname }}, {{ student.names }}
+                </a> 
+                - Celular: {{ student.phone }}
+            </li>
+        {% empty %}
+            <li>No hay estudiantes registrados de momento.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

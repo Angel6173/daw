@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Estudiante Matriculado</th>
+                <th>Curso Asignado</th>
+                <th>Fecha de Registro</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enrollment in courses_students %}
+            <tr>
+                <td>{{ enrollment.student.fathersurname }} {{ enrollment.student.names }}</td>
+                <td>{{ enrollment.course.coursename }}</td>
+                <td>{{ enrollment.enrollmentdate|date:"d/m/Y H:i" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No hay matrículas activas registradas.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
